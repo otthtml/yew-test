@@ -4,6 +4,16 @@ Simple project designed to test yew.
 
 
 ## How to run?
-1. Build the docker image in .devcontainer. Run the container and exec into it.
+
+Requirements: Build the docker image in .devcontainer. Run the container and exec into it.
+
+### Backend
+
+### Frontend
+1. In the .devcontainer, run:
 2. Run `cd front && trunk serve`.
 3. Open `localhost:8080` on your browser.
+
+## How to run all tests?
+1. In the .devcontainer, run:
+2. 
