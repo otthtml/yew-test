@@ -1,5 +1,6 @@
 use yew::prelude::*;
 
+mod login;
 
 #[function_component(App)]
 fn app() -> Html {
