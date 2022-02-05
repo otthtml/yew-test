@@ -1,43 +1,44 @@
-use yew::prelude::{Component, Context, Html, html};
+use gloo_utils::{document};
+use yew::prelude::{Component, Context, Html};
 
+const LOGIN_HTML: &str = include_str!("login.html");
 
 pub(crate) enum Msg {
     AddOne,
 }
 
-pub(crate) struct Model {
-    value: i64,
+pub(crate) struct LoginModel {
+    username: i32,
+    password: i32
 }
 
 pub fn check_credentials(username: &str, password: &str) -> bool {
     return true
 }
 
-impl Component for Model {
+impl Component for LoginModel {
     type Message = Msg;
     type Properties = ();
 
-    fn create(_: &Context<Self>) -> Self {
+    fn create(_ctx: &Context<Self>) -> Self {
         Self {
-            value: 0,
+            username: 0,
+            password: 0
         }
     }
 
     fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
         match msg {
             Msg::AddOne => {
-                self.value += 1;
-                true
+                return true;
             }
         }
     }
 
-    fn view(&self, ctx: &Context<Self>) -> Html {
-        html! {
-            <div>
-                <button onclick={ctx.link().callback(|_| Msg::AddOne)}>{ "+1" }</button>
-                <p>{ self.value }</p>
-            </div>
-        }
+    fn view(&self, _ctx: &Context<Self>) -> Html {
+        let div = document().create_element("div").unwrap();
+        div.set_inner_html(LOGIN_HTML);
+
+        Html::VRef(div.into())
     }
 }

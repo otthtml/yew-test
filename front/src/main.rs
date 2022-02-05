@@ -1,8 +1,8 @@
 mod login;
 
 use yew;
-use login::login::Model;
+use login::login::LoginModel;
 
 fn main() {
-    yew::start_app::<Model>();
+    yew::start_app::<LoginModel>();
 }
