@@ -1,5 +1,5 @@
 use gloo_utils::{document};
-use yew::prelude::*;
+use yew::prelude::{Component, Context, Html};
 
 const HTML_PATH: &str = include_str!("page_not_found.html");
 
