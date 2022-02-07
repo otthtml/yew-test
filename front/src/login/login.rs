@@ -3,35 +3,17 @@ use yew::prelude::{Component, Context, Html};
 
 const HTML_PATH: &str = include_str!("login.html");
 
-pub(crate) enum Msg {
-    AddOne,
+pub fn _check_credentials(_username: &str, _password: &str) -> bool {
+    return true;
 }
 
-pub fn check_credentials(username: &str, password: &str) -> bool {
-    return true
-}
-
-pub(crate) struct LoginComponent {
-    username: i32,
-    password: i32
-}
+pub(crate) struct LoginComponent;
 impl Component for LoginComponent {
-    type Message = Msg;
+    type Message = ();
     type Properties = ();
 
     fn create(_ctx: &Context<Self>) -> Self {
-        Self {
-            username: 0,
-            password: 0
-        }
-    }
-
-    fn update(&mut self, _ctx: &Context<Self>, msg: Self::Message) -> bool {
-        match msg {
-            Msg::AddOne => {
-                return true;
-            }
-        }
+        return Self;
     }
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
