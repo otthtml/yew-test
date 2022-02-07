@@ -1,22 +1,21 @@
 use gloo_utils::{document};
 use yew::prelude::{Component, Context, Html};
 
-const LOGIN_HTML: &str = include_str!("login.html");
+const HTML_PATH: &str = include_str!("login.html");
 
 pub(crate) enum Msg {
     AddOne,
-}
-
-pub(crate) struct LoginModel {
-    username: i32,
-    password: i32
 }
 
 pub fn check_credentials(username: &str, password: &str) -> bool {
     return true
 }
 
-impl Component for LoginModel {
+pub(crate) struct LoginComponent {
+    username: i32,
+    password: i32
+}
+impl Component for LoginComponent {
     type Message = Msg;
     type Properties = ();
 
@@ -37,7 +36,7 @@ impl Component for LoginModel {
 
     fn view(&self, _ctx: &Context<Self>) -> Html {
         let div = document().create_element("div").unwrap();
-        div.set_inner_html(LOGIN_HTML);
+        div.set_inner_html(HTML_PATH);
 
         Html::VRef(div.into())
     }
