@@ -20,6 +20,6 @@ impl Component for LoginComponent {
         let div = document().create_element("div").unwrap();
         div.set_inner_html(HTML_PATH);
 
-        Html::VRef(div.into())
+        return Html::VRef(div.into());
     }
 }
