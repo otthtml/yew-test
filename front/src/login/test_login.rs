@@ -1,12 +1,12 @@
 #[cfg(test)]
 mod tests {
-    use super::super::login::_check_credentials;
+    use super::super::login::_get_token;
 
     #[test]
-    fn it_works() {
+    fn ensure_get_token_sends_request() {
         let username = "valid_username";
         let password = "valid_password";
-        let result = _check_credentials(username, password);
+        let result = _get_token(username, password);
         assert_eq!(result, true);
     }
 }

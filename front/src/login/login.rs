@@ -3,7 +3,7 @@ use yew::prelude::{Component, Context, Html};
 
 const HTML_PATH: &str = include_str!("login.html");
 
-pub fn _check_credentials(_username: &str, _password: &str) -> bool {
+pub fn _get_token(_username: &str, _password: &str) -> bool {
     return true;
 }
 
